@@ -1,0 +1,4 @@
+game.code('racer', [
+function() {
+
+}]);
