@@ -28,7 +28,7 @@ function() {
         attrs.keyEvents.push(keyCode);
     }
 
-    document.onkeyup = function(e) {
+    document.onkeydown = function(e) {
         addKey(e.keyCode);
         //console.log(e.keyCode);
     };

@@ -1,10 +1,11 @@
 // load is a special module which is called once
 // the page loads
-game.code('load', ['loop', 'world', 'actor', 'input',
-function(loop, world, actor, input) {
+game.code('load', ['loop', 'world', 'actor', 'input', 'sprite',
+function(loop, world, actor, input, sprite) {
     var canvas = document.getElementById("c");
     world.init(canvas);
 
+    /*
     var r = actor();
     r.attrs.bg = 'red';
     r.attrs.moveUp = input.keys.KEY_W;
@@ -20,6 +21,10 @@ function(loop, world, actor, input) {
     r.attrs.moveLeft = input.keys.LEFT_ARROW;
     r.attrs.moveRight = input.keys.RIGHT_ARROW;
     world.addActor(b);
+    */
+
+    var c = sprite();
+    world.addActor(c);
 
     loop.start();
 
