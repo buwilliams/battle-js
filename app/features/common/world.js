@@ -20,9 +20,9 @@ function(input) {
     };
 
     var background = function() {
-        attrs.ctx.rect(0, 0, attrs.width, attrs.height);
+        //attrs.ctx.rect(0, 0, attrs.width, attrs.height);
         attrs.ctx.fillStyle = attrs.bg;
-        attrs.ctx.fill();
+        attrs.ctx.fillRect(0, 0, attrs.width, attrs.height);
     };
 
     var resize = function() {
@@ -47,6 +47,7 @@ function(input) {
     };
 
     var paint = function() {
+        attrs.ctx.clearRect(0, 0, attrs.width, attrs.height);
         resize();
         background();
         var state = getState();

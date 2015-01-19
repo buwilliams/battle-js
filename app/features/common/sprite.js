@@ -6,7 +6,7 @@ function(input, loop) {
             label: 'sprite',
             x: 0,
             y: 0,
-            move: 15,
+            move: 10,
             width: 64,
             height: 64,
             bg: 'black',
@@ -21,7 +21,7 @@ function(input, loop) {
             spriteHeight: 1,
             spriteLeft: 1,
             spriteTop: 2,
-            spriteLag: 1,
+            spriteLag: 4,
             spriteLagCount: -1
         };
 

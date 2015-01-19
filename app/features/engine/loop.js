@@ -16,12 +16,10 @@ function(world) {
     }
 
     var exec = function() {
-        world.paint();
         if(attrs.isLoopRunning) {
-            setTimeout(function() {
-                window.requestAnimationFrame(exec);
-            }, 1000 / attrs.fps);
+            window.requestAnimationFrame(exec);
         }
+        world.paint();
     };
 
     return {
