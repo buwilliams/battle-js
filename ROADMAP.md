@@ -1,6 +1,6 @@
 # Roadmap
 
-## 0.01
+## 0.01 - Single Player Movement
 
 Todo:
 - Add gravity
@@ -12,7 +12,7 @@ Todo:
 
 Done:
 
-## 0.02
+## 0.02 - Single Player Mechiancs
 
 Todo:
 - Create a concept of a map which contains platforms
@@ -20,3 +20,9 @@ Todo:
 
 Done:
 
+## Roadmap
+
+- Sound
+- Physics
+- Networking
+- Multiplayer
