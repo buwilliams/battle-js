@@ -1,22 +1,26 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <title>Battle</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
-<canvas id="c" width="800" height="600"></canvas>
+<canvas id="c" width="0" height="0"></canvas>
 
 <!-- game engine -->
 <script src="features/engine/game.js"></script><!-- 1st -->
+<script src="features/engine/world.js"></script>
 <script src="features/engine/loop.js"></script>
 <script src="features/engine/input.js"></script>
 <script src="features/main.js"></script>
 <!-- /game engine -->
 
-<script src="features/common/world.js"></script>
-<script src="features/common/actor.js"></script>
-<script src="features/common/sprite.js"></script>
+<!-- things -->
+<script src="features/things/actor.js"></script>
+<script src="features/things/sprite.js"></script>
+<script src="features/things/image.js"></script>
+<!-- /things -->
 
 </body>
 </html>

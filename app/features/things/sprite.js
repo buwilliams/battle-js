@@ -6,7 +6,7 @@ function(input, loop) {
             label: 'sprite',
             x: 0,
             y: 0,
-            move: 10,
+            move: 20,
             width: 64,
             height: 64,
             bg: 'black',
@@ -22,7 +22,9 @@ function(input, loop) {
             spriteLeft: 1,
             spriteTop: 2,
             spriteLag: 4,
-            spriteLagCount: -1
+            spriteLagCount: -1,
+            lastKeyPress: Date.now(),
+            lastFrame: Date.now()
         };
 
         var moveUp = function() {
@@ -42,7 +44,11 @@ function(input, loop) {
         };
 
         var handleKeyPress = function(key) {
-            //console.log('keypress', key, attrs.moveDown);
+            if(key !== null) {
+                var event = Date.now();
+                console.log('keypress', event - attrs.lastKeyPress);
+                attrs.lastKeyPress = event;
+            }
             if(attrs.moveUp === key) {
                 moveUp();
             } else if(attrs.moveDown === key) {
@@ -89,6 +95,13 @@ function(input, loop) {
         };
 
         var paint = function(state) {
+            /*
+            var event = Date.now();
+            console.log('frame', event - attrs.lastFrame);
+            attrs.lastFrame = event;
+            */
+
+            //attrs.x += attrs.move;
             handleKeyPress(state.key);
             animate(state.ctx);
         };

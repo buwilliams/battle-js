@@ -3,7 +3,9 @@ function(world) {
 
     var attrs = {
         isLoopRunning: false,
-        fps: 20
+        fps: 20,
+        lastFrame: Date.now(),
+        fpsRate: 0
     }
 
     var start = function() {
@@ -16,6 +18,12 @@ function(world) {
     }
 
     var exec = function() {
+
+        // keep track of fps
+        var start = Date.now();
+        attrs.fpsRate = start - attrs.lastFrame;
+        attrs.lastFrame = start;
+
         if(attrs.isLoopRunning) {
             window.requestAnimationFrame(exec);
         }

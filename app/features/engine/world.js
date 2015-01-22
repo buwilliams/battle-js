@@ -4,10 +4,10 @@ function(input) {
     var attrs = {
         ctx: null,
         canvas: null,
-        width: 1200,
-        height: 600,
+        width: 1500,
+        height: 1125,
         bg: '#eee',
-        actors: []
+        things: []
     };
 
     var bodies = [];
@@ -35,8 +35,8 @@ function(input) {
         }
     };
 
-    var addActor = function(actor) {
-        attrs.actors.push(actor);
+    var addThing = function(thing) {
+        attrs.things.push(thing);
     };
 
     var getState = function() {
@@ -51,8 +51,8 @@ function(input) {
         resize();
         background();
         var state = getState();
-        for(var i=0; i<attrs.actors.length; i++) {
-            attrs.actors[i].paint(state);
+        for(var i=0; i<attrs.things.length; i++) {
+            attrs.things[i].paint(state);
         }
     };
 
@@ -61,7 +61,7 @@ function(input) {
         init: init,
         background: background,
         resize: resize,
-        addActor: addActor,
+        addThing: addThing,
         paint: paint
     };
 }
