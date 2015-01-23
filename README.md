@@ -17,4 +17,6 @@ Multiplayer online action game for the browser.
 - Networking
 - User Interface
 - World
+- Camera
+- Director
 - Library of `Things`

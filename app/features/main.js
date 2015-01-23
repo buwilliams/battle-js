@@ -4,6 +4,8 @@ game.code('load', ['loop', 'world', 'actor', 'input', 'sprite', 'image',
 function(loop, world, actor, input, sprite, image) {
     var canvas = document.getElementById("c");
     world.init(canvas);
+    world.attrs.width = 1350;
+    world.attrs.height = 600;
 
     var bg = image();
     bg.attrs.image = 'images/emmas-room.png';

@@ -1,8 +1,31 @@
 # Roadmap
 
-## 0.01 - Single Player Movement
+## High level roadmap by Component
 
-Todo:
+- User Interface
+	- Start/Stop Game
+	- Game Score
+- Game
+	- World
+	- Director
+- Graphics
+	- Blocks
+	- Sprite Animation
+	- Images
+	- Camera
+- Physics
+	- Collision Detection
+	- Gravity
+	- Force
+- Sound
+	- Theme Music
+	- Event Sounds
+- Networking
+	- Backend Server
+	- Sync Events
+
+## 0.02 - Single Player Movement
+
 - Add gravity
 - Add ground platform so gravity doesn't carry her off the screen
 - Add platform to jump on
@@ -10,19 +33,15 @@ Todo:
 - Add collision detection so she doesn't fall off platform
 - Add more platforms
 
-Done:
+## 0.03 - Single Player Mechiancs
 
-## 0.02 - Single Player Mechiancs
-
-Todo:
 - Create a concept of a map which contains platforms
 - Add double-jump mechanic
 
-Done:
+## 0.01
 
-## Roadmap
+- ~~Dependency Injection~~
+- ~~Game Loop~~
+- ~~World~~
+- ~~Basic Input~~
 
-- Sound
-- Physics
-- Networking
-- Multiplayer
