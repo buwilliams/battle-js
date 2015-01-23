@@ -37,6 +37,8 @@
 	- Sprite Animation
 	- Images
 	- Camera
+- Input
+	- Keyboard
 - Physics
 	- Collision Detection
 	- Gravity
