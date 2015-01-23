@@ -37,6 +37,8 @@
 	- Sprite Animation
 	- Images
 	- Camera
+	- Projectiles
+	- Blink Affect
 - Input
 	- Keyboard
 - Physics
