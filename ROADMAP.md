@@ -32,13 +32,17 @@
 	- Game Loop
 	- World
 	- Director
+Mechanics
+	- Double jump
+	- Shooting Projectiles
+	- Pausing screen for animation
 - Graphics
 	- Blocks
 	- Sprite Animation
 	- Images
 	- Camera
 	- Projectiles
-	- Blink Affect
+	- Blink Effect
 - Input
 	- Keyboard
 - Physics
