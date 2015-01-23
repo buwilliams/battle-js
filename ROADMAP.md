@@ -1,29 +1,5 @@
 # Roadmap
 
-## High level roadmap by Component
-
-- User Interface
-	- Start/Stop Game
-	- Game Score
-- Game
-	- World
-	- Director
-- Graphics
-	- Blocks
-	- Sprite Animation
-	- Images
-	- Camera
-- Physics
-	- Collision Detection
-	- Gravity
-	- Force
-- Sound
-	- Theme Music
-	- Event Sounds
-- Networking
-	- Backend Server
-	- Sync Events
-
 ## 0.02 - Single Player Movement
 
 - Add gravity
@@ -45,3 +21,29 @@
 - ~~World~~
 - ~~Basic Input~~
 
+## High level roadmap by Component
+
+- User Interface
+	- Start/Stop Game
+	- Game Score
+	- View Players
+- Game
+	- Dependency Injection
+	- Game Loop
+	- World
+	- Director
+- Graphics
+	- Blocks
+	- Sprite Animation
+	- Images
+	- Camera
+- Physics
+	- Collision Detection
+	- Gravity
+	- Force
+- Sound
+	- Theme Music
+	- Event Sounds
+- Networking
+	- Backend Server
+	- Sync Events
