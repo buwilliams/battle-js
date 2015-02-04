@@ -1,5 +1,8 @@
-game.code('thing', [
+game.code('mover', [
 function() {
+
+    // Almost all this code is inspired by Daniel Shiffman's book
+    // The Nature of Code (http://natureofcode.com)
 
     // Newton's Laws:
     //  1. An object at rest stays at rest and an object in motion stays in motion.
@@ -54,9 +57,18 @@ function() {
             }
         };
 
-        props.addForce = function() {};
+        // Force: {x: 0, y: 0, name: 'wind'}
+        props.addForce = function(force) {
+            props._forces.push(force);
+        };
 
-        props.removeForce = function() {};
+        props.removeForce = function(name) {
+            for(var i=0; i<props._forces.length; i++) {
+                if(props._forces[i].name === name) {
+                    props._forces.splice(i, 1);
+                }
+            }
+        };
 
         return props;
     };
