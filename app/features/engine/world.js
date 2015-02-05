@@ -1,5 +1,5 @@
-game.code('world', ['input',
-function(input) {
+game.code('world', ['input', 'util',
+function(input, util) {
 
     var attrs = {
         ctx: null,
@@ -35,8 +35,8 @@ function(input) {
         }
     };
 
-    var addThing = function(thing) {
-        attrs.things.push(thing);
+    var addThings = function(things) {
+        util.extend(attrs.things, things);
     };
 
     var getState = function() {
@@ -61,7 +61,7 @@ function(input) {
         init: init,
         background: background,
         resize: resize,
-        addThing: addThing,
+        addThings: addThings,
         paint: paint
     };
 }

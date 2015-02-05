@@ -2,16 +2,16 @@
 // the page loads
 game.code('load', ['loop', 'world', 'actor', 'input', 'sprite', 'image',
 function(loop, world, actor, input, sprite, image) {
+
     var canvas = document.getElementById("c");
     world.init(canvas);
     world.attrs.width = 1350;
     world.attrs.height = 600;
 
-    var bg = image();
-    bg.attrs.image = 'images/emmas-room.png';
-    bg.attrs.width = 1500;
-    bg.attrs.height = 1125;
-    world.addThing(bg);
+    var a = image();
+    a.attrs.image = 'images/emmas-room.png';
+    a.attrs.width = 1500;
+    a.attrs.height = 1125;
 
     /*
     var r = actor();
@@ -31,8 +31,11 @@ function(loop, world, actor, input, sprite, image) {
     world.addThing(b);
     */
 
-    var c = sprite();
-    world.addThing(c);
+    var b = sprite();
+
+    var c = actor();
+
+    world.addThings([a, b, c]);
 
     loop.start();
 

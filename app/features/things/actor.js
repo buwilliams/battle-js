@@ -1,12 +1,12 @@
-game.code('actor', ['input',
-function(input) {
+game.code('actor', ['input', 'mover', 'util',
+function(input, mover, util) {
 
     return function() {
-        var attrs = {
+
+        var attrs = mover();
+
+        util.extend(attrs, {
             label: 'actor',
-            x: 0,
-            y: 0,
-            move: 10,
             width: 20,
             height: 20,
             bg: 'black',
@@ -14,8 +14,9 @@ function(input) {
             moveDown: input.keys.KEY_S,
             moveLeft: input.keys.KEY_A,
             moveRight: input.keys.KEY_D
-        };
+        });
 
+/*
         var moveUp = function() {
             attrs.y -= attrs.move;
         };
@@ -44,11 +45,15 @@ function(input) {
                 moveRight();
             }
         };
+        */
+
+        attrs.addForce({x: 0.1, y: 0.1, name: 'wind'});
 
         var paint = function(state) {
-            handleKeyPress(state.key);
+            attrs.update();
+            //handleKeyPress(state.key);
             state.ctx.fillStyle = attrs.bg;
-            state.ctx.fillRect(attrs.x, attrs.y, attrs.width, attrs.height);
+            state.ctx.fillRect(attrs._location.x, attrs._location.y, attrs.width, attrs.height);
         };
 
         return {

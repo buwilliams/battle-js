@@ -50,8 +50,8 @@ function() {
         // Functions for applying forces
         // forces are interesting because they accumulate
         props.applyForces = function() {
-            for(var i=0; i<props.forces.length; i++) {
-                var force = props.forces[i];
+            for(var i=0; i<props._forces.length; i++) {
+                var force = props._forces[i];
                 props._acceleration.x += force.x;
                 props._acceleration.y += force.y;
             }
