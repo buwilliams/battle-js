@@ -12,7 +12,9 @@ function(input, util) {
 
     var bodies = [];
 
-    var init = function(w, h, canvas) {
+    var init = function(w, h, canvasId) {
+
+        var canvas = util.$(canvasId);
 
         util.set(attrs.width, w);
         util.set(attrs.height, h);

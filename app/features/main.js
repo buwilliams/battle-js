@@ -3,7 +3,7 @@
 game.code('load', ['loop', 'world', 'actor', 'input', 'sprite', 'image', 'util',
 function(loop, world, actor, input, sprite, image, util) {
 
-    world.init(1350, 600, util.$('c'));
+    world.init(1350, 600, 'c');
 
     var a = image();
     a.attrs.image = 'images/emmas-room.png';
