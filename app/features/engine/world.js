@@ -12,7 +12,11 @@ function(input, util) {
 
     var bodies = [];
 
-    var init = function(canvas) {
+    var init = function(w, h, canvas) {
+
+        util.set(attrs.width, w);
+        util.set(attrs.height, h);
+
         attrs.canvas = canvas;
         attrs.ctx = canvas.getContext("2d");
         resize();

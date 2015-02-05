@@ -47,8 +47,6 @@ function(input, mover, util) {
         };
         */
 
-        attrs.addForce({x: 0.1, y: 0.1, name: 'wind'});
-
         var paint = function(state) {
             attrs.update();
             //handleKeyPress(state.key);

@@ -1,14 +1,28 @@
 game.code('util', [
 function() {
 
-    var each = function(a, fn) {
-        for(var i=0; i<a.length; i++) {
-            fn(a[i], i, a);
-        }
+    var $ = function(id) {
+        return document.getElementById(id);
+    }
+
+    var isUndefined = function(a) {
+        return (typeof a === 'undefined');
     };
 
     var isArray = function(a) {
         return Object.prototype.toString.call(a) === '[object Array]';
+    };
+
+    var set = function(a, b) {
+        if(!isUndefined(b)) {
+            a = b;
+        }
+    };
+
+    var each = function(a, fn) {
+        for(var i=0; i<a.length; i++) {
+            fn(a[i], i, a);
+        }
     };
 
     // Mutates a with the contents of b
@@ -28,7 +42,10 @@ function() {
     };
 
     return {
+        $: $,
+        set: set,
         each: each,
+        isUndefined: isUndefined,
         isArray: isArray,
         extend: extend
     }
