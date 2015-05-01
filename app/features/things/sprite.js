@@ -1,7 +1,7 @@
-game.code('sprite', ['input', 'loop',
-function(input, loop) {
+game.code('sprite', ['input', 'loop', 'util',
+function(input, loop, util) {
 
-    return function() {
+    return function(overrideAttrs) {
         var attrs = {
             label: 'sprite',
             x: 0,
@@ -16,7 +16,7 @@ function(input, loop) {
             moveRight: input.keys.KEY_D,
             spriteFps: 14,
             spriteInstance: null,
-            spriteImage: 'images/emma-running.png',
+            spriteImage: '',
             spriteFrames: 8,
             spriteHeight: 1,
             spriteLeft: 1,
@@ -46,7 +46,7 @@ function(input, loop) {
         var handleKeyPress = function(key) {
             if(key !== null) {
                 var event = Date.now();
-                console.log('keypress', event - attrs.lastKeyPress);
+                //console.log('keypress', event - attrs.lastKeyPress);
                 attrs.lastKeyPress = event;
             }
             if(attrs.moveUp === key) {
@@ -105,6 +105,10 @@ function(input, loop) {
             handleKeyPress(state.key);
             animate(state.ctx);
         };
+
+        if(typeof overrideAttrs !== 'undefined') {
+          util.extend(attrs, overrideAttrs);
+        }
 
         return {
             attrs: attrs,

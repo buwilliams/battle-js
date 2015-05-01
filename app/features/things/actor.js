@@ -1,7 +1,7 @@
 game.code('actor', ['input', 'mover', 'util',
 function(input, mover, util) {
 
-    return function() {
+    return function(overrideAttrs) {
 
         var attrs = mover();
 
@@ -16,7 +16,6 @@ function(input, mover, util) {
             moveRight: input.keys.KEY_D
         });
 
-/*
         var moveUp = function() {
             attrs.y -= attrs.move;
         };
@@ -45,7 +44,6 @@ function(input, mover, util) {
                 moveRight();
             }
         };
-        */
 
         var paint = function(state) {
             attrs.update();
@@ -53,6 +51,10 @@ function(input, mover, util) {
             state.ctx.fillStyle = attrs.bg;
             state.ctx.fillRect(attrs._location.x, attrs._location.y, attrs.width, attrs.height);
         };
+
+        if(typeof overrideAttrs !== 'undefined') {
+          util.extend(attrs, overrideAttrs);
+        }
 
         return {
             attrs: attrs,

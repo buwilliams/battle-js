@@ -1,11 +1,17 @@
-game.code('loop', ['world',
-function(world) {
+game.code('loop', [
+function() {
 
     var attrs = {
         isLoopRunning: false,
         fps: 20,
         lastFrame: Date.now(),
-        fpsRate: 0
+        fpsRate: 0,
+        world: null
+    }
+
+    var init = function(world) {
+        attrs.world = world;
+        return this;
     }
 
     var start = function() {
@@ -27,14 +33,14 @@ function(world) {
         if(attrs.isLoopRunning) {
             window.requestAnimationFrame(exec);
         }
-        world.paint();
+        attrs.world.paint();
     };
 
     return {
         attrs: attrs,
+        init: init,
         start: start,
         stop: stop,
         exec: exec
     };
-}
-]);
+}]);

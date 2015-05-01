@@ -1,10 +1,10 @@
-game.code('image', ['loop',
-function(loop) {
+game.code('image', ['loop', 'util',
+function(loop, util) {
 
-    return function() {
+    return function(overrideAttrs) {
         var attrs = {
             label: 'image',
-            image: 'images/emma-running.png',
+            image: '',
             imageInstance: null,
             x: 0,
             y: 0,
@@ -13,7 +13,7 @@ function(loop) {
             cropX: 0,
             cropY: 0,
             cropWidth: null,
-            cropHeight: null 
+            cropHeight: null
         };
 
         var loadImage = function() {
@@ -36,6 +36,10 @@ function(loop) {
                                 imageX, imageY, imageWidth, imageHeight,
                                 attrs.x, attrs.y, attrs.width, attrs.height);
         };
+
+        if(typeof overrideAttrs !== 'undefined') {
+          util.extend(attrs, overrideAttrs);
+        }
 
         return {
             attrs: attrs,

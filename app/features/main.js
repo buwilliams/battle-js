@@ -3,21 +3,30 @@
 game.code('load', ['loop', 'world', 'actor', 'input', 'sprite', 'image', 'util',
 function(loop, world, actor, input, sprite, image, util) {
 
-    world.init(1350, 600, 'c');
+    var w = world({
+      canvas: util.$('c'),
+      width: 800,
+      height: 800
+    });
 
-    var a = image();
-    a.attrs.image = 'images/emmas-room.png';
-    a.attrs.width = 1500;
-    a.attrs.height = 1125;
+    var a = image({
+      image: 'images/emmas-room.png',
+      width: 800,
+      height: 800
+    });
 
-    var b = sprite();
+    var b = sprite({
+        width: 64,
+        height: 64,
+        spriteImage: 'images/emma-running.png',
+    });
 
-    var c = actor();
-    c.attrs.addForce({x: 0.01, y: 0.01, name: 'wind'});
+    //var c = actor();
+    //c.attrs.addForce({x: 0.01, y: 0.01, name: 'wind'});
 
-    world.addThings([a, b, c]);
+    w.addThings([a, b]);
 
-    loop.start();
+    loop.init(w).start();
 
 }
 ]);
