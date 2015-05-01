@@ -1,6 +1,6 @@
-# Battle-js
+# Game Engine
 
-Multiplayer online action game for the browser.
+Multiplayer online action game engine for the browser.
 
 # Motivation
 
