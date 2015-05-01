@@ -20,3 +20,4 @@ Multiplayer online action game engine for the browser.
 - Camera
 - Director
 - Library of `Things`
+- Animation (Sprites)
