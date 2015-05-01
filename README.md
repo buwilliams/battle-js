@@ -10,11 +10,11 @@ Multiplayer online action game engine for the browser.
 # Game Engine Components
 
 - Dependency Injection (modeled after angular)
-- Game Loop
+- Game Loop (using requestAnimationFrame)
 - Inputs (Mouse & Keyboard)
 - Sound
-- Physics (Gravity, etc.)
-- Networking
+- Physics (Gravity, Collison Detection, etc.)
+- Networking for Multiplayer
 - User Interface
 - World
 - Camera
